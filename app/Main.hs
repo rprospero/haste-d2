@@ -4,8 +4,6 @@ import Haste.D2.Scale
 import Haste.D2.SVG.Axis as Ax
 import Haste.D2.SVG
 import Haste.D2.Select
-import Data.Monoid
-import Data.String
     
 width = 400 :: Double
 height = 400 :: Double
