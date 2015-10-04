@@ -11,6 +11,9 @@ margin = 50 :: Double
 
 dataset :: [[Double]]
 dataset = map (\x ->  [x,sin x]) [0,0.1..10]
+
+dataset2 :: [[Double]]
+dataset2 = map (\x ->  [x,cos x]) [0,0.1..10]
     
 main :: IO ()
 main = do
@@ -52,10 +55,17 @@ main = do
       >>= attr "class" "lines"
       >>= attr "clip-path" "url(#clip)"
       >>= selectAll "path"
-      >>= d3data [dataset]
+      >>= d3data [dataset,dataset]
       >>= enter
       >>= append "path"
       >>= attr "d" l
       >>= attr "style" "stroke: black; fill: none"
+
+  _ <- select ".lines"
+      >>= selectAll "path"
+      >>= d3data [dataset,dataset2]
+      >>= transition
+      >>= duration 10000
+      >>= attr "d" l
 
   print "Done"
