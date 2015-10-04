@@ -13,10 +13,10 @@ name:                haste-d2
 version:             0.1.0.0
 
 -- A short (one-line) description of the package.
--- synopsis:            
+synopsis: A poorly written interface to the d3 library from Haste.
 
 -- A longer description of the package.
--- description:         
+description: This is a misguided attempt at making a library for using the d3 javascript library in Haste.  This package is called haste-d2 so that a better, more well thought out library can one day use the name haste-d3 without this garbage blocking things.  The author has delusions of grandeur that he might one day be competent enough to write that library, but don't hold your breath.
 
 -- The license under which the package is released.
 -- license:             
