@@ -2,7 +2,7 @@
 
 -- | This module talks helps with the axes objects from the d3 library.
 
-module Haste.D2.SVG.Axis (axis,scale,orient,ticks,AxisOrientation(Bottom,Left)) where
+module Haste.D2.SVG.Axis (axis,scale,orient,ticks,AxisOrientation(Bottom,Left),Axis) where
 
 import Haste.Foreign
 import Haste.D2.Scale (Scale)

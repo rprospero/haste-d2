@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 -- | This module handles general SVG operations from D3
-module Haste.D2.SVG (line,translate) where
+module Haste.D2.SVG (line,translate,Line) where
 
 import Haste.Foreign
 import Haste.Graphics.Canvas (Point)
