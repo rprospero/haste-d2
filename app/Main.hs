@@ -33,7 +33,7 @@ main = do
 
   l <- line x y
 
-  svg <- select "body"
+  svg <- select "body" d3
         >>= append "svg"
         >>= attr "width" (width + margin)
         >>= attr "height" (height + margin)
@@ -61,7 +61,7 @@ main = do
       >>= attr "d" l
       >>= attr "style" "stroke: black; fill: none"
 
-  _ <- select ".lines"
+  _ <- select ".lines" d3
       >>= selectAll "path"
       >>= d3data [dataset,dataset2]
       >>= transition

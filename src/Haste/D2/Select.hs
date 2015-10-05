@@ -13,7 +13,7 @@
 
 
 
-module Haste.D2.Select (select,selectAll,append,enter,attr,call,d3data,transition,duration) where
+module Haste.D2.Select (d3,select,selectAll,append,enter,attr,call,d3data,transition,duration,Select) where
 
 import Haste.Foreign
 import Haste.Prim (JSString)
@@ -22,6 +22,9 @@ import Data.String
 
 type Select = JSAny
 
+d3 :: Select
+d3 = constant "d3"
+
 d3data' :: JSAny -> Select -> IO Select
 d3data' = ffi "function(x,y){return y.data(x);}"
 
@@ -29,11 +32,11 @@ d3data' = ffi "function(x,y){return y.data(x);}"
 d3data :: ToAny a => a -> Select -> IO Select
 d3data s = d3data' (toAny s)
 
-select' :: JSString -> IO Select
-select' = ffi "function(x){return d3.select(x);}"
+select' :: JSString -> Select -> IO Select
+select' = ffi "function(x,y){return y.select(x);}"
 
 -- | Acquire a single selection for d3 to operate on.  The single argument is an element selector.
-select :: String -> IO Select
+select :: String -> Select -> IO Select
 select s = select' (fromString s)
 
 selectAll' :: JSString -> Select -> IO Select
